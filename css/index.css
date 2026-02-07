@@ -1,0 +1,122 @@
+/* css/index.css */
+
+/* 1. 首页独有的背景和全屏覆盖效果 */
+.home-container {
+    position: relative;
+    width: 100vw; /* 视口宽度 */
+    height: 100vh; /* 视口高度 */
+    display: flex;
+    flex-direction: column; /* 弹性盒子，主轴垂直 */
+    justify-content: center; /* 垂直居中内容 */
+    align-items: center; /* 水平居中内容 */
+    
+    /* 这张图将作为整个页面的背景。*/
+    background-image: url('../images/home/background.jpg'); /* 路径从CSS文件出发，../ 表示回到父目录，再进入 images/home */
+    background-size: cover; /* 确保背景图覆盖整个容器 */
+    background-position: center; /* 背景图居中显示 */
+    background-repeat: no-repeat; /* 不重复 */
+    z-index: 0; /* 确保背景在其他内容之下 */
+    overflow: hidden; /* 防止背景图滚动条 */
+}
+
+/* 确保所有内容都在叠加层之上 */
+.home-header, .main-content, .explore-button-container {
+    position: relative; /* 确保这些元素在z-index上高于背景叠加层 */
+    z-index: 2;
+}
+
+/* 4. 右下角按钮：“开启你的探索” */
+.explore-button-container {
+    position: absolute;
+    bottom: 100px; /* 距离底部 50px */
+    right: 60px; /* 距离右侧 50px */
+}
+
+.explore-button {
+    display: flex; /* 使用 flexbox 布局按钮内部元素 */
+    align-items: center; /* 垂直居中对齐 */
+    padding: 15px 30px;
+    background-color: transparent; /* 按钮背景色，浅灰色 */
+    border-radius: 30px; /* 圆角按钮 */
+    text-decoration: none; /* 去除下划线 */
+    color: transparent; /* 按钮文字颜色 */
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 过渡效果 */
+    cursor: pointer; /* 鼠标指针样式 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 按钮阴影 */
+}
+
+
+
+
+/* 5. 简单的响应式调整 */
+@media (max-width: 992px) {
+    .main-title {
+        font-size: 6em;
+    }
+    .subtitle {
+        font-size: 1.8em;
+    }
+    .top-left-text, .top-right-text, .explore-button {
+        font-size: 1em;
+    }
+    .explore-button-container {
+        bottom: 30px;
+        right: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 4.5em;
+        letter-spacing: 3px;
+    }
+    .subtitle {
+        font-size: 1.3em;
+    }
+    .home-header {
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        width: calc(100% - 40px);
+    }
+    .explore-button-container {
+        bottom: 30px;
+        right: 30px;
+    }
+    .explore-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .arrow-icon {
+        font-size: 1.3em;
+        margin-left: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 3em;
+        letter-spacing: 2px;
+    }
+    .subtitle {
+        font-size: 1em;
+    }
+    .top-left-text, .top-right-text {
+        font-size: 0.8em;
+    }
+    .explore-button-container {
+        right: 50%; /* 水平居中 */
+        transform: translateX(50%); /* 水平居中 */
+        bottom: 30px;
+    }
+    .explore-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .arrow-icon {
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+}

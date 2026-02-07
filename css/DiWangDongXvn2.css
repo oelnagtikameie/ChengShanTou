@@ -1,0 +1,110 @@
+/* 1. 基础背景与防滑动设定 */
+body {
+    background-image: url('../images/DiWangDongXvn/page_bg_2.jpg'); 
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+    font-family: 'Noto Serif SC', serif; 
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+/* 2. 整体布局定位 */
+.interaction-container {
+    display: block; 
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.side-content {
+    /* --- 核心调节区：控制文字整体的位置 --- */
+    margin-left: 550px;  /* 文字整体左右位置 */
+    margin-top: 80px;    /* 文字整体上下位置 */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+/* 3. “小结”按钮样式 */
+.custom-btn {
+    background: transparent;
+    border: none;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #462d06; /* 深棕色文字 */
+    cursor: pointer;
+    padding: 10px 40px;
+    outline: none;
+    
+    /* 让按钮对准背景图里的装饰框 */
+    margin-left: 370px;  
+    margin-top: -50px; 
+}
+
+/* 4. 文字文本框样式（已去掉白色边框） */
+.text-box {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s ease;
+    width: 600px; 
+}
+
+.text-box p {
+    /* --- 删除了 background-color, padding, border-radius --- */
+    margin-bottom: 30px; /* 段落之间留出一些空隙，因为没有框了 */
+    color: #462d06;      /* 稍微加深文字颜色，保证在背景上清晰 */
+    font-size: 19px;     /* 略微调大字号，提高易读性 */
+    line-height: 1.8;
+    letter-spacing: 3px;
+    text-indent: 2em;    /* 首行缩进两字符 */
+    
+    /* 可选：如果背景图颜色复杂导致看不清文字，可以取消下面这行注释 */
+    /* text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); */
+}
+
+/* 5. 每段文字单独设置 */
+/* --- 第一段文字设置 --- */
+.text-box p:nth-child(1) { 
+    margin-top: 10px; 
+    width: 600px;      /* 控制第一段的宽度，数值越小，文字越早换行 */
+    margin-left: 100px; /* 控制第一段整体向右挪动多少 */
+}
+
+/* --- 第二段文字设置 --- */
+.text-box p:nth-child(2) { 
+    width: 600px;      /* 第二段可以设置得长一些 */
+    margin-left: 100px;  /* 保持原位 */
+    margin-top: 10px;  /* 还可以单独控制段落间的上下间距 */
+}
+
+/* --- 第三段文字设置 --- */
+.text-box p:nth-child(3) { 
+    width: 1200px;  
+    margin-top: 35px;    
+    transform: translateX(-500px); /* 让第三段往右突出去一点，形成错落感 */
+}
+
+/* 6. 继续探索按钮 */
+.next-page-btn {
+    position: absolute; 
+    bottom: 20px; 
+    right: 130px;
+    z-index: 10;
+    display: block;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #5c4b3a;
+    font-weight: bold;
+    text-decoration: none;
+}

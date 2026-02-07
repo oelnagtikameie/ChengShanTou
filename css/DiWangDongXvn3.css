@@ -1,0 +1,147 @@
+/* 1. 基础背景与布局容器 */
+body {
+    background-image: url('../images/DiWangDongXvn/page_bg_3.jpg'); 
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+.interaction-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 80px 0 80px; /* 侧边距留出呼吸感 */
+}
+
+/* 2. 左侧轮播区域 (参考 TianJinTou) */
+.left-slider {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel {
+    width: 500px;
+    height: 550px;
+    position: relative;
+    border: 3px solid #a8947b;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateX(-80px);
+    margin-top: -30px;
+}
+
+.carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* 初始隐藏 */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel img.active {
+    opacity: 1; /* 激活时显示 */
+}
+
+.dots-container {
+    margin-top: -30px;
+    transform: translateX(-100px);
+    z-index:10;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background-color: #462d06; /* 激活状态的小圆点颜色 */
+}
+
+/* 3. 右侧文字区域 (独立控制逻辑) */
+.side-content {
+    flex: 1;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* “汉武帝东巡”交互按钮 */
+.custom-btn {
+    background: transparent;
+    border: none;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #462d06;
+    cursor: pointer;
+    padding: 10px 40px;
+    transform: translateX(290px); /* 调整位置以对齐背景图按钮框 */
+    margin-top: -20px;
+    outline: none;
+}
+
+/* 文字内容容器 */
+.text-box {
+    opacity: 0; /* 默认隐藏，由 JS 触发显示 */
+    visibility: hidden;
+    transition: all 0.6s ease;
+}
+
+/* 通用文字样式 (无边框设计) */
+.text-box p {
+    color: #462d06;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 2px; /* 增加字间距 */
+    text-indent: 2em;    /* 首行缩进 */
+    transform: translateX(-70px); 
+}
+
+/* --- 核心：每段文字长度位置单独设置 --- */
+.text-box p:nth-child(1) { 
+    width: 600px;  
+    margin-top: 40px;
+}
+
+.text-box p:nth-child(2) { 
+    width: 600px; 
+    margin-top: 25px;
+}
+
+.text-box p:nth-child(3) { 
+    width: 600px; 
+    margin-top:25px;
+}
+
+/* 4. 返回按钮 (位于右下角) */
+.back-btn {
+    position: absolute;
+    bottom: 42.5px;
+    right: 117.5px;
+    padding: 10px 45px;
+    background: transparent; /* 半透明背景 */
+    color: #5c4b3a;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background 0.3s;
+}

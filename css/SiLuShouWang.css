@@ -1,0 +1,174 @@
+/* 1. 注册本地字体 */
+@font-face {
+    font-family: 'SuiFengTi'; /* 这是你给字体起的代号，可以随便起，但后面要一致 */
+    src: url('./fonts/ThePeakFontPlus_V1_001.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 1. 基础背景 */
+body {
+    background-image: url('../images/SiLuShouWang/page_overall_background.jpg'); 
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+.interaction-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 80px 0 80px;
+}
+
+/* 2. 轮播区域样式 */
+.left-slider {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel {
+    width: 520px;
+    height: 590px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    margin-top: -10px;
+    transform: translateX(-40px);
+}
+
+.carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
+
+.dots-container {
+    margin-top: 0px;
+    transform: translateX(-20px);
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    transform: translateX(-20px);
+    margin-top: 0px;
+}
+
+.dot.active {
+    background-color: #462d06;
+    z-index: 110;
+}
+
+/* 3. 右侧文字区域布局 */
+.side-content {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+}
+
+.custom-btn {
+    background: transparent;
+    border: none;
+    color: #60403a;
+    font-family: 'SuiFengTi', serif;
+    font-size: 24px;
+    padding: 8px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: fit-content;
+    margin-top: -5px;
+    margin-left:195px;
+    transition: background 0.3s;
+}
+
+/* 文字内容独立控制 */
+.text-box p {
+    color: #462d06;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+/* 交互部分初始状态 */
+.interactive {
+    opacity: 1;
+    width:650px;
+    visibility: visible;
+    margin-top:15px;
+    transform: translateX(-28px);
+}
+
+/* 独立控制三段文字 */
+.para-bold { 
+    font-weight: bold; 
+    text-indent: 0; 
+}
+.para-indent { 
+    text-indent: 2em; 
+}
+.para-short { 
+    text-indent: 2em;
+}
+
+/* 静态文字样式（下方区域） */
+.static {
+    margin-top: -10px;
+    border-top: 1px solid rgba(168, 148, 123, 0.3);
+    padding-top: 20px;
+    transform:translateX(-30px);
+}
+
+.static p {
+    text-indent: 2em;
+    font-family: 'SuiFengTi', 'Noto Serif SC', serif;
+    color: #462d06;
+    font-size: 19px;
+    line-height: 1.7;
+    margin-top: 5px;
+    text-align: justify;
+}
+/* 当屏幕宽度小于 1000px 时执行 */
+@media (max-width: 1000px) {
+    .content-wrapper {
+        flex-direction: column; /* 左右排列变上下排列 */
+        height: auto;           /* 取消高度限制，允许向下滚动 */
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .carousel-wrapper, .text-section {
+        width: 100%;            /* 宽度占满 */
+        max-width: 100%;
+    }
+    
+    .carousel-wrapper {
+        height: 300px;          /* 缩小图片高度 */
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>成山头 - 帝王东巡</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/DiWangDongXvn1.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="top-bar">
+            <div class="branding"></div>
+            <nav class="main-nav">
+                <a href="../index.html">首页</a>
+                <a href="TianJinTou.html">何以“天尽头”</a>
+                <a href="ZhaoWuYouLai.html">朝舞由来</a>
+                <a href="DiWangDongXvn1.html" class="active">帝王东巡</a>
+                <a href="FengHuoSuiYue1.html">烽火岁月</a>
+                <a href="SiLuShouWang.html">丝路守望</a>
+            </nav>
+        </header>
+
+        <main class="content-wrapper">
+            <div class="interaction-container">
+                
+                <div class="side-content left-side">
+                    <button class="custom-btn" onclick="showContent('first')">初至天尽头</button>
+                    <div class="text-box" id="content-first">
+                        <p>公元前219年，距秦始皇扫平六国、一统天下仅过去两年，天下初定但六国残余势力仍暗流涌动，他遂开启东巡之旅。当秦始皇率文武百官东巡至成山头，只见仙山云雾缭绕，大海烟波浩渺，且此地三面环海、日出先临，认定这是日神居所，于是帝拈须怡然曰：“仙境，天尽头”，并命丞相李斯手书“天尽头、秦东门”刻石立碑，将成山头定为秦帝国的东方门户，“天尽头”之名正是来源于此。</p>
+                        <p>此次巡幸的核心正是一场庄严的政治与文化仪式。在古人观念中，成山头作为“天尽头”，是日神所居之地。秦始皇在此依照齐地传统，隆重祭祀“八神”之一的“日主”，并立庙祀奉。</p>
+                        <p>这一行为标志着秦帝国在军事征服后，正式从礼法祭祀的层面，将原东方诸侯国的信仰体系纳入中央王朝的秩序之中，完成了文化权力上的统一。站在大陆尽头，面对苍茫东海，秦始皇心中帝国的地理疆域与心理边界在此刻达到了一个现实的极点。</p>
+                    </div>
+                </div>
+
+                <div class="side-content right-side">
+                    <button class="custom-btn" onclick="showContent('second')">再临成山头</button>
+                    <div class="text-box" id="content-second">
+                        <p>公元前210年，秦始皇已至晚年，对长生不老的渴求愈发迫切，加之此前第一次东巡成山头祭日求仙未果，他再度开启东巡之旅。彼时六国旧地虽表面臣服，但潜藏的反抗隐患仍在。而在这一次东巡中，他命随行的丞相李斯撰文立石，再次颂扬秦朝的统一功业。</p>
+                        <p>相传石碑刻有 “天尽头，秦东门” 或 “秦东之门” 等字样（后世称“李斯碑”）。其次，许是核心目的带有些神话色彩，出现了诸多传说，包括鞭山填海与秦桥崩塌，羞见读书人，成山松等，其中最著名的便是射鲛。</p>
+                        <p>面对徐福多年求仙未果、推托因海中“大鲛鱼”阻挠的借口，据《史记》记载，秦始皇亲自携带连弩，乘船入海，在烟台附近海域射杀了一条巨鱼。这一行为被后世文学演绎为在成山头海域“射鲛”，旨在为求仙使者开辟道路。</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="DiWangDongXvn2.html" class="next-page-btn">继续探索</a>
+        </main>
+    </div>
+
+    <script>
+        function showContent(id) {
+            // 点击一次生效，显示内容
+            const el = document.getElementById('content-' + id);
+            if (el) {
+                el.style.opacity = "1";
+                el.style.visibility = "visible";
+            }
+        }
+    </script>
+</body>
+</html>

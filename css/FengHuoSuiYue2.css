@@ -1,0 +1,65 @@
+/* 1. 基础背景与布局容器 */
+body {
+    background-image: url('../images/FengHuoSuiYue/page_bg_2.jpg'); 
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+    font-family: 'Noto Serif SC', serif;
+}
+
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+/* 2. 文字区域定位 */
+.text-container {
+    position: absolute;
+    top: 320px;    /* 根据背景图调节上下位置 */
+    left: 100px;    /* 距离左侧边距 */
+    width: 750px;  /* 限制文字宽度，防止文字铺满屏幕 */
+}
+
+.article-content p {
+    font-size: 16px;
+    color: #462d06;
+    line-height: 1.8;
+    margin-bottom: 2px;
+    text-align: justify;
+    /* 核心要求：首行缩进两字符 */
+    text-indent: 2em; 
+}
+
+/* 3. 返回按钮样式 */
+.goback-btn {
+    position: absolute;
+    bottom: 62px;
+    right: 510px;
+    padding: 10px 40px;
+    /* 采用与背景装饰相称的深棕色或透明描边样式 */
+    background: rgba(255, 255, 255, 0.8);
+    color: #5c4b3a;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.goback-btn:hover {
+    background: #5c4b3a;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* 4. 目录栏微调（如果需要与背景色更融合） */
+.main-nav a {
+    color: #462d06;
+}
+.main-nav a.active::after {
+    background-color: #462d06;
+}

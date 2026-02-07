@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>成山头 - 帝王东巡小结</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/DiWangDongXvn2.css">
+</head>
+<body>
+    <div class="container">
+        <header class="top-bar">
+            <div class="branding"></div>
+            <nav class="main-nav">
+                <a href="../index.html">首页</a>
+                <a href="TianJinTou.html">何以“天尽头”</a>
+                <a href="ZhaoWuYouLai.html">朝舞由来</a>
+                <a href="DiWangDongXvn1.html" class="active">帝王东巡</a>
+                <a href="FengHuoSuiYue1.html">烽火岁月</a>
+                <a href="SiLuShouWang.html">丝路守望</a>
+            </nav>
+        </header>
+
+        <main class="content-wrapper">
+            <div class="interaction-container">
+                <div class="side-content right-side">
+                    <button class="custom-btn" onclick="showSummary()">小结</button>
+                    <div class="text-box" id="summary-content">
+                        <p>综合两次东巡，秦始皇的核心目的，既是为了彰显秦朝威权、清除东方六国残余势力、安抚民心以巩固统治，也是因晚年对死亡的恐惧，迫切想要寻访仙山求取长生不老之药；同时，海上巡游也推动了秦朝航海技术进步，发明了世界最早的船闸，间接提升了军事战斗能力。此外，始皇东巡的政治意义极为突出。</p>
+                        <p>在国家疆域观念上，他在成山头立“秦东门”刻石，首次以官方礼制的形式，将这片陆海交接的最东端定义为帝国的东方边界。这一举动突破了此前中原王朝“华夷分界”的模糊认知，用实体地标把“疆域”从模糊的文化概念固化为清晰的政治地理边界，强化了大一统王朝对东方海疆的主权意识；</p>
+                        <p>在海洋探索祭祀上，尽管直接目的是寻仙求药，但他组织徐福等方士进行大规模、有资助的航海活动，是中国历史上首次由中央政权推动的系统性海洋探索。这标志着帝国力量正式从陆地延伸至海岸，并试图向海洋未知领域进行探寻，为后世认识海洋埋下了伏笔。</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="DiWangDongXvn3.html" class="next-page-btn">继续探索</a>
+        </main>
+    </div>
+
+    <script>
+        function showSummary() {
+            const el = document.getElementById('summary-content');
+            if (el) {
+                el.style.opacity = "1";
+                el.style.visibility = "visible";
+            }
+        }
+    </script>
+</body>
+</html>

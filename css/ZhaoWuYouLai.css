@@ -7,7 +7,7 @@ html, body {
 
 body {
     /* 替换为朝舞页面的背景图 */
-    background-image: url('../images/ZhaoWuYouLai/page_overall_background.jpg'); 
+    background-image: url('../images/ZhaoWuYouLai/page_overall_background.webp'); 
     background-size: 100% auto;
     background-position: top center;
     background-repeat: no-repeat;

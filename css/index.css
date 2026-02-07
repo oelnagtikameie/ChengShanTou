@@ -11,7 +11,7 @@
     align-items: center; /* 水平居中内容 */
     
     /* 这张图将作为整个页面的背景。*/
-    background-image: url('../images/home/background.jpg'); /* 路径从CSS文件出发，../ 表示回到父目录，再进入 images/home */
+    background-image: url('../images/home/background.webp'); /* 路径从CSS文件出发，../ 表示回到父目录，再进入 images/home */
     background-size: cover; /* 确保背景图覆盖整个容器 */
     background-position: center; /* 背景图居中显示 */
     background-repeat: no-repeat; /* 不重复 */

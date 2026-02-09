@@ -107,8 +107,7 @@ body {
 /* 左侧三段 */
 .left-side .text-box p { 
     width:85%;
-    margin-left: 50px; 
-    margin-top: -10px; }
+    margin-left: 50px;  }
 
 /* --- 右侧三段：阶梯式宽度精准控制 --- */
 

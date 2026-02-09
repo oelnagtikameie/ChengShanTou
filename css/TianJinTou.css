@@ -160,7 +160,7 @@ body {
 /* 重点：针对最后两行进行深度避让 */
 .article-footer .list-item:nth-last-child(2),
 .article-footer .list-item:last-child {
-    padding-right: 110px; /* 加大数值，彻底躲开右下角圆图 */
+    padding-right: 80px; /* 加大数值，彻底躲开右下角圆图 */
 }
 /* 当屏幕宽度小于 1000px 时执行 */
 @media (max-width: 1000px) {

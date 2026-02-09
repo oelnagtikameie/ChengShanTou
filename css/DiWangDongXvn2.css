@@ -84,7 +84,7 @@ body {
     width: 600px;      /* 第二段可以设置得长一些 */
     margin-left: 50px;  /* 保持原位 */
     margin-top: 5px;  /* 还可以单独控制段落间的上下间距 */
-    margin-bottom:10px;
+    margin-bottom:0px;
 }
 
 /* --- 第三段文字设置 --- */

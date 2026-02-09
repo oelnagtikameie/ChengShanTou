@@ -39,12 +39,12 @@ body {
 
 .carousel {
     width: 520px;
-    height: 590px;
+    height: 570px;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    margin-top: -15px;
+    margin-top: 15%;
     transform: translateX(-50px);
 }
 
@@ -102,8 +102,8 @@ body {
     border-radius: 20px;
     cursor: pointer;
     width: fit-content;
-    margin-top: -5px;
-    margin-left:195px;
+    margin-top: -10px;
+    margin-left:175px;
     transition: background 0.3s;
 }
 
@@ -122,7 +122,7 @@ body {
     width:650px;
     visibility: visible;
     margin-top:10px;
-    transform: translateX(-40px);
+    transform: translateX(-50px);
 }
 
 /* 独立控制三段文字 */
@@ -142,7 +142,7 @@ body {
     margin-top: -10px;
     border-top: 1px solid rgba(168, 148, 123, 0.3);
     padding-top: 20px;
-    transform:translateX(-40px);
+    transform:translateX(-50px);
 }
 
 .static p {

@@ -19,8 +19,8 @@ body {
 /* 2. 文字区域定位 */
 .text-container {
     position: absolute;
-    margin-top: 50%;    /* 根据背景图调节上下位置 */
-    left: 100px;    /* 距离左侧边距 */
+    margin-top: 30%;    /* 根据背景图调节上下位置 */
+    left: 10%;    /* 距离左侧边距 */
     width: 750px;  /* 限制文字宽度，防止文字铺满屏幕 */
 }
 
@@ -37,7 +37,7 @@ body {
 /* 3. 返回按钮样式 */
 .goback-btn {
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     right: 30%;
     padding: 10px 40px;
     /* 采用与背景装饰相称的深棕色或透明描边样式 */

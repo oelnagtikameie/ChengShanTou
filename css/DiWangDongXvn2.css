@@ -46,8 +46,8 @@ body {
     outline: none;
     
     /* 让按钮对准背景图里的装饰框 */
-    margin-left: 320px;  
-    margin-top: -70px; 
+    margin-left: 280px;  
+    margin-top: -60px; 
 }
 
 /* 4. 文字文本框样式（已去掉白色边框） */
@@ -96,7 +96,7 @@ body {
 /* 6. 继续探索按钮 */
 .next-page-btn {
     position: absolute; 
-    bottom: 30px; 
+    bottom: 40px; 
     right: 120px;
     z-index: 10;
     display: block;

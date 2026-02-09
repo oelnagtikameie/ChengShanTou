@@ -40,7 +40,7 @@ body {
 }
 
 .right-side {
-    margin-top: -15px; 
+    margin-top: -12.5px; 
     transform: translateX(-135px); 
 }
 /* 4. 按钮文字样式：保持透明背景 */
@@ -59,7 +59,6 @@ body {
 }
 /* 5. 正文文本框样式（清除之前的背景，作为容器） */
 .text-box {
-    margin-top: 15px;
     width: 100%;
     opacity: 0;
     visibility: hidden;
@@ -72,12 +71,12 @@ body {
 
 /* 专门针对右侧的文字容器进行下移 */
 .right-side .text-box {
-    margin-top: 5px;  /* 数值越大，三段文字整体离按钮越远 */
+    margin-top: 0px;  /* 数值越大，三段文字整体离按钮越远 */
 }
 
 /* 专门针对左侧的文字容器进行下移 */
 .left-side .text-box {
-    margin-top: -10px;  /* 数值越大，三段文字整体离按钮越远 */
+    margin-top: -20px;  /* 数值越大，三段文字整体离按钮越远 */
 }
 
 /* 6. 核心修改：让背景框“连起来” */
@@ -115,8 +114,8 @@ body {
 
 /* 统一设置右侧所有段落的左对齐线，确保左侧是直的 */
 .right-side .text-box p {
-    margin-left: 30px;   /* 统一改为0，或者统一一个数值 */
-    margin-right: 20px; 
+    margin-left: 33px;   /* 统一改为0，或者统一一个数值 */
+    margin-right: 17px; 
 }
 
 /* 第一段：最窄 */
@@ -137,8 +136,8 @@ body {
 
 .next-page-btn {
     position: absolute; 
-    bottom: 20px; /* 距离 content-wrapper 底部 50px */
-    right: 120px; /* 距离 content-wrapper 右侧 100px */
+    bottom: 35px; /* 距离 content-wrapper 底部 50px */
+    right: 115px; /* 距离 content-wrapper 右侧 100px */
     z-index: 10;
 
     

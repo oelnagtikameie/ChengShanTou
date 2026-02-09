@@ -153,7 +153,7 @@ body {
     line-height: 1.7;
     margin-top: 0px;
     text-align: justify;
-    width:80%;
+    width:95%;
 }
 /* 当屏幕宽度小于 1000px 时执行 */
 @media (max-width: 1000px) {

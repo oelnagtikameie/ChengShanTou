@@ -108,7 +108,7 @@ body {
 .left-side .text-box p { 
     width:85%;
     margin-left: 50px; 
-    margin-top: -10px; }
+    margin-top: 0px; }
 
 /* --- 右侧三段：阶梯式宽度精准控制 --- */
 
@@ -116,7 +116,7 @@ body {
 .right-side .text-box p {
     margin-left: 33px;   /* 统一改为0，或者统一一个数值 */
     margin-right: 17px; 
-    margin-top:0px;
+    margin-top:-10px;
 }
 
 /* 第一段：最窄 */

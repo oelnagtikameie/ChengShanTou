@@ -19,7 +19,7 @@ body {
 /* 2. 文字区域定位 */
 .text-container {
     position: absolute;
-    margin-top: 25%;    /* 根据背景图调节上下位置 */
+    margin-top: 22%;    /* 根据背景图调节上下位置 */
     left: 7%;    /* 距离左侧边距 */
     width: 55%;  /* 限制文字宽度，防止文字铺满屏幕 */
 }

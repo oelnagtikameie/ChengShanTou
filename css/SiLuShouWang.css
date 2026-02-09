@@ -44,7 +44,7 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    margin-top: 1%;
+    margin-top: -10%;
     transform: translateX(-50px);
 }
 
@@ -103,7 +103,7 @@ body {
     cursor: pointer;
     width: fit-content;
     margin-top: -11px;
-    margin-left:155px;
+    margin-left:15px;
     transition: background 0.3s;
 }
 

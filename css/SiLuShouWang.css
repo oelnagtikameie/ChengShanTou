@@ -62,7 +62,7 @@ body {
 }
 
 .dots-container {
-    margin-top: -20px;
+    margin-top: -25px;
     transform: translateX(-20px);
 }
 
@@ -76,7 +76,7 @@ body {
     cursor: pointer;
     z-index: 100;
     transform: translateX(-20px);
-    margin-top: -20px;
+    margin-top: -25px;
 }
 
 .dot.active {
@@ -103,16 +103,16 @@ body {
     cursor: pointer;
     width: fit-content;
     margin-top: -11px;
-    margin-left:15px;
+    margin-left:40px;
     transition: background 0.3s;
 }
 
 /* 文字内容独立控制 */
 .text-box p {
     color: #462d06;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.7;
-    margin-top: 10px;
+    margin-top: 5px;
     text-align: justify;
 }
 
@@ -122,7 +122,7 @@ body {
     width:650px;
     visibility: visible;
     margin-top:10px;
-    transform: translateX(-70px);
+    transform: translateX(-75px);
 }
 
 /* 独立控制三段文字 */
@@ -142,7 +142,7 @@ body {
     margin-top: 5%;
     border-top: 1px solid rgba(168, 148, 123, 0.3);
     padding-top: 0px;
-    transform:translateX(-70px);
+    transform:translateX(-75px);
 }
 
 .static p {
@@ -151,7 +151,7 @@ body {
     color: #462d06;
     font-size: 19px;
     line-height: 1.7;
-    margin-top: 5px;
+    margin-top: 0px;
     text-align: justify;
 }
 /* 当屏幕宽度小于 1000px 时执行 */

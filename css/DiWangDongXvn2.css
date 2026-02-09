@@ -75,7 +75,8 @@ body {
 /* --- 第一段文字设置 --- */
 .text-box p:nth-child(1) { 
     margin-top: 10px; 
-    width: 600px;      /* 控制第一段的宽度，数值越小，文字越早换行 */
+    width: 600px; 
+    margin-bottom:10px;     /* 控制第一段的宽度，数值越小，文字越早换行 */
     margin-left: 50px; /* 控制第一段整体向右挪动多少 */
 }
 

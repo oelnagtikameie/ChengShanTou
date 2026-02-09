@@ -98,7 +98,7 @@ body {
 /* 6. 继续探索按钮 */
 .next-page-btn {
     position: absolute; 
-    bottom: 48px; 
+    bottom: 49px; 
     right: 120px;
     z-index: 10;
     display: block;

@@ -34,13 +34,13 @@ body {
 }
 
 .left-side {
-    margin-top: 95px; 
+    margin-top: 85px; 
     /* 尝试加大数值测试，比如 translateX(-100px)，看是否有明显跳动 */
     transform: translateX(-80px); 
 }
 
 .right-side {
-    margin-top: -5px; 
+    margin-top: -15px; 
     transform: translateX(-135px); 
 }
 /* 4. 按钮文字样式：保持透明背景 */
@@ -137,8 +137,8 @@ body {
 
 .next-page-btn {
     position: absolute; 
-    bottom: 8px; /* 距离 content-wrapper 底部 50px */
-    right: 125px; /* 距离 content-wrapper 右侧 100px */
+    bottom: 20px; /* 距离 content-wrapper 底部 50px */
+    right: 120px; /* 距离 content-wrapper 右侧 100px */
     z-index: 10;
 
     

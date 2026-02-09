@@ -19,7 +19,7 @@ body {
 /* 2. 文字区域定位 */
 .text-container {
     position: absolute;
-    top: 320px;    /* 根据背景图调节上下位置 */
+    margin-top: 50%;    /* 根据背景图调节上下位置 */
     left: 100px;    /* 距离左侧边距 */
     width: 750px;  /* 限制文字宽度，防止文字铺满屏幕 */
 }
@@ -37,8 +37,8 @@ body {
 /* 3. 返回按钮样式 */
 .goback-btn {
     position: absolute;
-    bottom: 62px;
-    right: 510px;
+    bottom: 10%;
+    right: 30%;
     padding: 10px 40px;
     /* 采用与背景装饰相称的深棕色或透明描边样式 */
     background: rgba(255, 255, 255, 0.8);
@@ -53,7 +53,6 @@ body {
 .goback-btn:hover {
     background: #5c4b3a;
     color: #fff;
-    transform: translateY(-2px);
 }
 
 /* 4. 目录栏微调（如果需要与背景色更融合） */

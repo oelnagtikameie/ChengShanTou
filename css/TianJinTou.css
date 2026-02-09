@@ -140,7 +140,7 @@ body {
 
 .article-body p {
     margin-top: 0;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     /* 新增：首行缩进两字符 */
     text-indent: 2em; 
 }

@@ -83,20 +83,20 @@ body {
 .text-box p:nth-child(2) { 
     width: 600px;      /* 第二段可以设置得长一些 */
     margin-left: 50px;  /* 保持原位 */
-    margin-top: 10px;  /* 还可以单独控制段落间的上下间距 */
+    margin-top: 5px;  /* 还可以单独控制段落间的上下间距 */
 }
 
 /* --- 第三段文字设置 --- */
 .text-box p:nth-child(3) { 
     width: 1200px;  
-    margin-top: 30px;    
+    margin-top: 20px;    
     transform: translateX(-530px); /* 让第三段往右突出去一点，形成错落感 */
 }
 
 /* 6. 继续探索按钮 */
 .next-page-btn {
     position: absolute; 
-    bottom: 45px; 
+    bottom: 47px; 
     right: 120px;
     z-index: 10;
     display: block;

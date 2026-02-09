@@ -96,7 +96,7 @@ body {
     padding: 10px 40px;
     transform: translateX(-20px); /* 调整位置以对齐背景图按钮框 */
     margin-top: -30px;
-    margin-left:60%;
+    margin-left:50%;
     outline: none;
 }
 

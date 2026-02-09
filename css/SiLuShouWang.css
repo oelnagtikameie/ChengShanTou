@@ -26,7 +26,7 @@ body {
 .interaction-container {
     display: flex;
     justify-content: space-between;
-    padding: 40px 80px 0 80px;
+    padding: 60px 80px 0 80px;
 }
 
 /* 2. 轮播区域样式 */
@@ -44,7 +44,7 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    margin-top: 5%;
+    margin-top: 1%;
     transform: translateX(-50px);
 }
 

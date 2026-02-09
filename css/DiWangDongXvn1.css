@@ -116,7 +116,7 @@ body {
 .right-side .text-box p {
     margin-left: 33px;   /* 统一改为0，或者统一一个数值 */
     margin-right: 17px; 
-    margin-top:-10px;
+    margin-top:0px;
 }
 
 /* 第一段：最窄 */

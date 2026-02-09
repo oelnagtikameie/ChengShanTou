@@ -103,7 +103,7 @@ body {
     cursor: pointer;
     width: fit-content;
     margin-top: -11px;
-    margin-left:40px;
+    margin-left:20%;
     transition: background 0.3s;
 }
 
@@ -149,10 +149,11 @@ body {
     text-indent: 2em;
     font-family: 'SuiFengTi', 'Noto Serif SC', serif;
     color: #462d06;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.7;
     margin-top: 0px;
     text-align: justify;
+    width:60%;
 }
 /* 当屏幕宽度小于 1000px 时执行 */
 @media (max-width: 1000px) {

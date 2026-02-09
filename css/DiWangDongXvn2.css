@@ -46,7 +46,7 @@ body {
     outline: none;
     
     /* 让按钮对准背景图里的装饰框 */
-    margin-left: 280px;  
+    margin-left: 290px;  
     margin-top: -60px; 
 }
 
@@ -76,13 +76,13 @@ body {
 .text-box p:nth-child(1) { 
     margin-top: 10px; 
     width: 600px;      /* 控制第一段的宽度，数值越小，文字越早换行 */
-    margin-left: 100px; /* 控制第一段整体向右挪动多少 */
+    margin-left: 70px; /* 控制第一段整体向右挪动多少 */
 }
 
 /* --- 第二段文字设置 --- */
 .text-box p:nth-child(2) { 
     width: 600px;      /* 第二段可以设置得长一些 */
-    margin-left: 100px;  /* 保持原位 */
+    margin-left: 70px;  /* 保持原位 */
     margin-top: 10px;  /* 还可以单独控制段落间的上下间距 */
 }
 
@@ -90,7 +90,7 @@ body {
 .text-box p:nth-child(3) { 
     width: 1200px;  
     margin-top: 35px;    
-    transform: translateX(-500px); /* 让第三段往右突出去一点，形成错落感 */
+    transform: translateX(-520px); /* 让第三段往右突出去一点，形成错落感 */
 }
 
 /* 6. 继续探索按钮 */

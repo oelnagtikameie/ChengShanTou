@@ -20,9 +20,9 @@ body {
 /* 2. 文字区域定位 */
 .text-container {
     position: relative;
-    margin-top: 265px;    /* 根据背景图调节上下位置 */
-    margin-left: 85px;    /* 距离左侧边距 */
-    width: 78%; 
+    margin-top: 268px;    /* 根据背景图调节上下位置 */
+    margin-left: 84px;    /* 距离左侧边距 */
+    width: 76%; 
     max-width: 750px; /* 限制文字宽度，防止文字铺满屏幕 */
 }
 

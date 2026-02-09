@@ -96,7 +96,7 @@ body {
     padding: 10px 40px;
     transform: translateX(0px); /* 调整位置以对齐背景图按钮框 */
     margin-top: -30px;
-    margin-left:80%;
+    margin-left:60%;
     outline: none;
 }
 
@@ -114,23 +114,23 @@ body {
     line-height: 1.8;
     letter-spacing: 2px; /* 增加字间距 */
     text-indent: 2em;    /* 首行缩进 */
-    transform: translateX(-70px); 
+    transform: translateX(-60px); 
 }
 
 /* --- 核心：每段文字长度位置单独设置 --- */
 .text-box p:nth-child(1) { 
     width: 600px;  
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .text-box p:nth-child(2) { 
     width: 600px; 
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .text-box p:nth-child(3) { 
     width: 600px; 
-    margin-top:25px;
+    margin-top:20px;
 }
 
 /* 4. 返回按钮 (位于右下角) */

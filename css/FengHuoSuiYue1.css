@@ -21,8 +21,8 @@ body {
 .text-container {
     position: relative;
     margin-top: 268px;    /* 根据背景图调节上下位置 */
-    margin-left: 84px;    /* 距离左侧边距 */
-    width: 76%; 
+    margin-left: 82px;    /* 距离左侧边距 */
+    width: 74%; 
     max-width: 750px; /* 限制文字宽度，防止文字铺满屏幕 */
 }
 
@@ -39,7 +39,7 @@ body {
 /* 3. 继续探索按钮样式 */
 .next-page-btn {
     position: fixed;
-    bottom: 62px;
+    bottom: 64px;
     right: 30%;
     transform:translateX(-50%);
     padding: 10px 40px;

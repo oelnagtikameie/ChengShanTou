@@ -26,7 +26,7 @@ body {
 .interaction-container {
     display: flex;
     justify-content: space-between;
-    padding: 60px 80px 0 80px;
+    padding: 40px 80px 0 80px;
 }
 
 /* 2. 轮播区域样式 */
@@ -102,8 +102,8 @@ body {
     border-radius: 20px;
     cursor: pointer;
     width: fit-content;
-    margin-top: -12px;
-    margin-left:165px;
+    margin-top: -11px;
+    margin-left:155px;
     transition: background 0.3s;
 }
 
@@ -122,7 +122,7 @@ body {
     width:650px;
     visibility: visible;
     margin-top:10px;
-    transform: translateX(-60px);
+    transform: translateX(-70px);
 }
 
 /* 独立控制三段文字 */
@@ -141,8 +141,8 @@ body {
 .static {
     margin-top: 5%;
     border-top: 1px solid rgba(168, 148, 123, 0.3);
-    padding-top: 20px;
-    transform:translateX(-60px);
+    padding-top: 0px;
+    transform:translateX(-70px);
 }
 
 .static p {

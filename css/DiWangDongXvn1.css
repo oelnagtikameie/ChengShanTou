@@ -6,25 +6,25 @@ body {
     font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
     /* 禁止最外层横向滚动 */
     overflow-x: auto; 
+    /* 将背景图移到容器上，而不是 body 上 */
+    background-image: url('../images/DiWangDongXvn/page_bg_1.webp');
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    max-height: auto; /* 防止在超长屏幕上溢出底部 */
+    overflow: visible;
 }
 
 /* 2. 核心容器：锁定比例是关键 */
 .content-wrapper {
     position: relative;
     width: 100%;
-    min-width: 1200px;
+    min-width: 800px;
     /* 锁定 16:9 比例，这是防止乱跑的核心 */
     display: flex;
     flex-direction: column;
     aspect-ratio: 16 / 9; 
     
-    /* 将背景图移到容器上，而不是 body 上 */
-    background-image: url('../images/DiWangDongXvn/page_bg_1.webp');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    max-height: auto; /* 防止在超长屏幕上溢出底部 */
-    overflow: visible;
 }
 
 /* 3. 交互区域：使用百分比高度确保对齐 */
@@ -48,14 +48,15 @@ body {
 
 /* 左侧定位：使用百分比，放弃负 margin */
 .left-side {
-    margin-top: 12.2%;
+    margin-top: 7.7%;
     flex: 3;
-    padding-left: 0;
+    padding-left: 0.2%;
 }
 
 /* 右侧定位 */
 .right-side {
-    margin-top: 5%;
+    margin-top: 0.3%;
+    margin-left: 0%;
     align-items: flex-end; /* 让右侧内容整体靠右对齐 */
     flex: 4;
 }
@@ -98,8 +99,6 @@ body {
     margin-right: 0%;
     letter-spacing: 1.5px;
 }
-
-div#content-first {}
 
 /* 当激活时显示（假设你 JS 切换的是这个类） */
 .text-box.active {
@@ -147,8 +146,8 @@ div#content-first {}
 /* 9. “继续探索”按钮：绝对定位到右下角 */
 .next-page-btn {
     position: absolute;
-    bottom: 1.9%;
-    right: 8.5%;
+    bottom: 10%;
+    right: 8.7%;
     z-index: 10;
     width: 120px;
     height: 40px;

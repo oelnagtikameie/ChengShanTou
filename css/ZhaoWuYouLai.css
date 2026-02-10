@@ -1,3 +1,42 @@
+header.top-bar {
+    width: 100%;
+    min-width: 1000px;
+    height: 60px;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    background-image: url("../images/DiWangDongXvn/DWDX2-MENU.png");
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgb(203, 188, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav {
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2%;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: rgb(92, 75, 58);
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.main-nav a.active {
+    color: rgb(237, 235, 233);
+}
+
 /* 1. 基础背景逻辑：回归 16:9 比例锁定 */
 body {
     margin: 0;

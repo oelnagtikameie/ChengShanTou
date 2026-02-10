@@ -1,163 +1,162 @@
-/* 1. 背景与基础布局保持不变 */
+/* 1. 基础全局设置 */
 body {
-    background-image: url('../images/DiWangDongXvn/page_bg_1.webp'); 
-    background-size: 100% auto;
-    background-position: top center;
-    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
     background-color: #f5f5f5;
     font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+    /* 禁止最外层横向滚动 */
+    overflow-x: auto; 
 }
 
-/* 你的 CSS 里之前漏掉了这个类，请务必加上 */
+/* 2. 核心容器：锁定比例是关键 */
 .content-wrapper {
-    position: relative;          /* 让“继续探索”按钮相对于这个区域定位 */
+    position: relative;
     width: 100%;
-    height: calc(100vh - 60px); /* 减去顶部导航栏的高度，确保容器填满剩余空间 */
-    overflow: hidden;
+    min-width: 1200px;
+    /* 锁定 16:9 比例，这是防止乱跑的核心 */
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 16 / 9; 
+    
+    /* 将背景图移到容器上，而不是 body 上 */
+    background-image: url('../images/DiWangDongXvn/page_bg_1.webp');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    max-height: auto; /* 防止在超长屏幕上溢出底部 */
+    overflow: visible;
 }
 
+/* 3. 交互区域：使用百分比高度确保对齐 */
 .interaction-container {
     display: flex;
-    justify-content: space-around;
-    padding: 0 50px;
+    flex-direction: row;    /* 强制水平排列（左右） */
+    justify-content: space-between;
+    width: 100%;            /* 占据全宽 */
+    height: 100%;
+    padding: 0; 
     position: relative;
     z-index: 2;
 }
 
-/* 2. 左右侧区域的基础样式 */
+/* 4. 侧边栏基础样式 */
 .side-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    /* transform 能够强制让元素脱离 Flex 限制进行位移 */
 }
 
+/* 左侧定位：使用百分比，放弃负 margin */
 .left-side {
-    margin-top: 85px; 
-    /* 尝试加大数值测试，比如 translateX(-100px)，看是否有明显跳动 */
-    transform: translateX(-80px); 
+    margin-top: 12.2%;
+    flex: 3;
+    padding-left: 0;
 }
 
+/* 右侧定位 */
 .right-side {
-    margin-top: -12.5px; 
-    transform: translateX(-135px); 
+    margin-top: 5%;
+    align-items: flex-end; /* 让右侧内容整体靠右对齐 */
+    flex: 4;
 }
-/* 4. 按钮文字样式：保持透明背景 */
+
+/* 5. 按钮样式 */
 .custom-btn {
     background: transparent;
     border: none;
     font-family: 'Noto Serif SC', serif;
-    font-size: 18px;
+    font-size: clamp(16px, 1.5vw, 24px); /* 字体大小随屏缩放 */
     font-weight: bold;
     color: #5c4b3a;
     cursor: pointer;
-    padding: 10px 40px;
+    padding: 10px 20px;
+    margin-bottom: 1%;
     outline: none;
-    /* 这个 margin-bottom 也会撑开空间，如果不需要文本框太靠下可以减小它 */
-    margin-bottom: 30px; 
+    text-align: left;
 }
-/* 5. 正文文本框样式（清除之前的背景，作为容器） */
+
+/* 左边侧边栏里的按钮 */
+.left-side .custom-btn {
+    margin-left: 33%;  /* 根据背景图微调，让它对齐左边的装饰框 */
+}
+
+/* 右边侧边栏里的按钮 */
+.right-side .custom-btn {
+    margin-left: 25%;   /* 这里设置你想要的距离，或者也可以用 margin-right */
+    align-self: flex-start; /* 强制这个按钮在右侧区域内也靠左对齐 */
+}
+
+/* 6. 文本框容器 */
 .text-box {
     width: 100%;
-    opacity: 0;
+    opacity: 0; /* 默认隐藏，配合你的 JS 使用 */
     visibility: hidden;
     transition: all 0.5s ease;
-    /* 关键：让内部的 p 标签紧密排列 */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* 默认左对齐 */
+    margin-left: 7%;
+    margin-right: 0%;
+    letter-spacing: 1.5px;
 }
 
-/* 专门针对右侧的文字容器进行下移 */
-.right-side .text-box {
-    margin-top: -10px;  /* 数值越大，三段文字整体离按钮越远 */
+div#content-first {}
+
+/* 当激活时显示（假设你 JS 切换的是这个类） */
+.text-box.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* 专门针对左侧的文字容器进行下移 */
-.left-side .text-box {
-    margin-top: -10px;  /* 数值越大，三段文字整体离按钮越远 */
-}
-
-/* 6. 核心修改：让背景框“连起来” */
+/* 7. 段落样式：背景连贯处理 */
 .text-box p {
-    background-color: rgba(255, 255, 255, 0.7); /* 半透明白底 */
-    padding: 10px 20px;                          /* 缩小上下内边距 */
-    margin-bottom: 0;                            /* 彻底消除段落间距，让框连起来 */
+    background-color: rgba(255, 255, 255, 0.75); /* 稍微增加不透明度增加可读性 */
+    padding: 1% 4%;
+    margin: 0; /* 消除默认边距实现连贯 */
     color: #462d06;
-    font-size: 16px;
+    font-size: clamp(10px, 1.1vw, 18px); /* 响应式字号 */
     line-height: 1.8;
     text-indent: 2em;
-    /* 关键：去掉圆角，只在最顶和最底保留圆角 */
-    border-radius: 0; 
+    border-radius: 0;
+    padding-bottom: 2%;
+    box-sizing: border-box;
 }
 
-/* 给第一段顶部加圆角，最后一段底部加圆角，形成一个整体框 */
-.text-box p:first-child {
-    border-radius: 15px 15px 0 0;
-    padding-top: 20px;
+/* 圆角处理 */
+.text-box p:first-child { border-radius: 15px 15px 0 0; padding-top: 3%; }
+.text-box p:last-child { border-radius: 0 0 15px 15px; padding-bottom: 3%; }
+
+/* 8. 左右两侧宽度精修 - 放弃 120% */
+.left-side .text-box p {
+    width: 85%; /* 限制宽度，不要铺满 */
 }
-.text-box p:last-child {
-    border-radius: 0 0 15px 15px;
-    padding-bottom: 20px;
-}
 
-/* 7. 精细调节每一段的宽度和位置（此时背景会随宽度自动变化） */
+.left-side .text-box p:nth-child(1) {margin-left: 0%;}
+.left-side .text-box p:nth-child(2) {padding-top: 2%;}
+.left-side .text-box p:nth-child(3) {padding-top: 2%;margin-top: 0;}
 
-/* 左侧三段 */
-.left-side .text-box p { 
-    width:85%;
-    margin-left: 50px; 
-    margin-top: 0px; }
-
-/* --- 右侧三段：阶梯式宽度精准控制 --- */
-
-/* 统一设置右侧所有段落的左对齐线，确保左侧是直的 */
 .right-side .text-box p {
-    margin-left: 33px;   /* 统一改为0，或者统一一个数值 */
-    margin-right: 17px; 
-    margin-top:-10px;
+    width: 85%; /* 右侧整体宽度 */
+    margin-right: 5%;
 }
 
-/* 第一段：最窄 */
-.right-side .text-box p:nth-child(1) { 
-    width: 40%; 
-}
+/* 右侧阶梯效果：通过 max-width 实现，更安全 */
+.right-side .text-box p:nth-child(1) {max-width: 30%;margin-left: 0%;padding-top: 2%;padding-bottom: 1%;}
+.right-side .text-box p:nth-child(2) { max-width: 95%; border-top-right-radius: 15px; }
+.right-side .text-box p:nth-child(3) { max-width: 100%; }
 
-/* 第二段：中等宽度，并加上右上圆角 */
-.right-side .text-box p:nth-child(2) { 
-    width: 120%;         /* 从 125% 调低到 75% 即可收窄 */
-    border-top-right-radius: 15px;
-    margin-top:0px;
-}
-
-/* 第三段：最宽（但不要超过100%），同样加上右上圆角 */
-.right-side .text-box p:nth-child(3) { 
-    width: 120%;         /* 收窄到 95% 避免溢出 */
-    margin-top:0px;
-}
-
+/* 9. “继续探索”按钮：绝对定位到右下角 */
 .next-page-btn {
-    position: absolute; 
-    bottom: 35px; /* 距离 content-wrapper 底部 50px */
-    right: 115px; /* 距离 content-wrapper 右侧 100px */
+    position: absolute;
+    bottom: 1.9%;
+    right: 8.5%;
     z-index: 10;
-
-    
-    display: block;
-    width: 150px;
-    height: 50px;
-    line-height: 50px; /* 文字垂直居中 */
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
+    background: transparent;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #5c4b3a;
+    font-size: 14px;
 }
-
-.content-wrapper {
-    position: relative;
-    width: 100%;
-    /* 确保容器高度不超过浏览器可视区域 */
-    height: calc(100vh - 60px); 
-    
-    /* 核心：强制隐藏所有溢出的内容，彻底消除滑动键 */
-    overflow: hidden; 
-}
-

@@ -1,148 +1,181 @@
-/* 1. 基础背景与布局容器 */
-body {
-    background-image: url('../images/DiWangDongXvn/page_bg_3.webp'); 
-    background-size: 100% auto;
-    background-position: top center;
+header.top-bar {
+    width: 100%;
+    min-width: 1000px; /* 统一改为 1000px 以匹配第一页 */
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-image: url("../images/DiWangDongXvn/DWDX2-MENU.png");
+    background-size: 100% 100%;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-color: rgb(203, 188, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav {
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end; /* 保持靠右 */
+    align-items: center;
+    padding-right: 2%; /* 这里的数值可根据第二页背景微调 */
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: rgb(92, 75, 58);
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.main-nav a.active {
+    color: rgb(237, 235, 233);
+}
+
+
+/* 1. 基础背景逻辑：回归 16:9 比例锁定 */
+body {
+    margin: 0;
+    padding: 0;
     background-color: #f5f5f5;
     font-family: 'Noto Serif SC', serif;
+    overflow-x: hidden; /* 防止横向溢出 */
 }
 
 .content-wrapper {
     position: relative;
     width: 100%;
-    height: calc(100vh - 60px);
+    min-width: 1000px; /* 保护最小显示 */
+    aspect-ratio: 16 / 9; /* 强制锁定比例，这是防止变形的核心 */
+    background-image: url('../images/DiWangDongXvn/page_bg_3.webp'); 
+    background-size: 100% 100%; /* 背景图随容器等比例缩放 */
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: auto;
     overflow: hidden;
 }
 
+/* 2. 交互容器：使用百分比定位 */
 .interaction-container {
     display: flex;
     justify-content: space-between;
-    padding: 80px 80px 0 80px; /* 侧边距留出呼吸感 */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0; /* 清除固定 padding，改用内部元素的 margin */
 }
 
-/* 2. 左侧轮播区域 (参考 TianJinTou) */
+/* --- 左侧轮播区域 --- */
 .left-slider {
-    flex: 1.2;
+    flex: 0.8;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    margin-top: 10%; /* 百分比控制垂直位置 */
 }
 
 .carousel {
-    width: 500px;
-    height: 550px;
+    width:450px;
+    height: 500px;
     position: relative;
-    border: 3px solid #a8947b;
+    border: 0.2vw solid #a8947b;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transform: translateX(-80px);
-    margin-top: -30px;
+    margin-left: 0%; /* 调整左右位置 */
 }
 
 .carousel img {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 0; /* 初始隐藏 */
+    object-fit: cover; /* 关键：图片填充不变形 */
+    opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
 .carousel img.active {
-    opacity: 1; /* 激活时显示 */
+    opacity: 1;
 }
 
 .dots-container {
-    margin-top: -30px;
-    transform: translateX(-100px);
-    z-index:10;
+    margin-top: 2%;
+    z-index: 10;
 }
 
 .dot {
     display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 6px;
+    width: 0.8vw; /* 随屏幕缩放的小圆点 */
+    height: 0.8vw;
+    margin: 0 0.4vw;
     background-color: #bbb;
     border-radius: 50%;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
-.dot.active {
-    background-color: #462d06; /* 激活状态的小圆点颜色 */
-}
-
-/* 3. 右侧文字区域 (独立控制逻辑) */
+/* --- 右侧文字区域 --- */
 .side-content {
-    flex: 1;
-    margin-top: -10px;
+    flex: 1.2;
+    margin-top: 5%; /* 对应背景图按钮位置 */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-/* “汉武帝东巡”交互按钮 */
 .custom-btn {
     background: transparent;
     border: none;
     font-family: 'Noto Serif SC', serif;
-    font-size: 20px;
+    font-size: clamp(18px, 1.5vw, 26px);
     font-weight: bold;
     color: #462d06;
     cursor: pointer;
-    padding: 10px 40px;
-    transform: translateX(0px); /* 调整位置以对齐背景图按钮框 */
-    margin-top: -30px;
-    margin-left:50%;
+    /* 位置微调 */
+    margin-left: 56%;
+    margin-top: 2%;
+    margin-bottom: 1%;
     outline: none;
 }
 
-/* 文字内容容器 */
 .text-box {
-    opacity: 0; /* 默认隐藏，由 JS 触发显示 */
+    width: 83%;
+    margin-left: 5%;
+    opacity: 0;
     visibility: hidden;
     transition: all 0.6s ease;
 }
 
-/* 通用文字样式 (无边框设计) */
+.text-box.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 .text-box p {
     color: #462d06;
-    font-size: 18px;
+    font-size: clamp(14px, 1.6vw, 19px);
     line-height: 1.8;
-    letter-spacing: 2px; /* 增加字间距 */
-    text-indent: 2em;    /* 首行缩进 */
-    transform: translateX(-40px); 
-}
-
-/* --- 核心：每段文字长度位置单独设置 --- */
-.text-box p:nth-child(1) { 
-    width: 600px;  
-    margin-top: 20px;
-}
-
-.text-box p:nth-child(2) { 
-    width: 600px; 
-    margin-top: 20px;
-}
-
-.text-box p:nth-child(3) { 
-    width: 600px; 
-    margin-top:20px;
+    letter-spacing: 0.1vw;
+    text-indent: 2em;
+    margin-bottom: 1%;
+    /* 移除固定 width: 600px，改用百分比自适应 */
+    margin-top: 5%;
+    width: 100%;
 }
 
 /* 4. 返回按钮 (位于右下角) */
 .back-btn {
     position: absolute;
-    bottom: 11%;
-    right: 8%;
-    padding: 10px 45px;
-    background: transparent; /* 半透明背景 */
+    bottom: 9%;
+    right: 12%;
+    z-index: 20;
     color: #5c4b3a;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 25px;
-    transition: background 0.3s;
+    font-size: clamp(14px, 1.1vw, 18px);
 }

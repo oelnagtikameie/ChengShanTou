@@ -1,182 +1,159 @@
 /* 1. 页面基础设定 */
 html, body {
-    height: 100%;
     margin: 0;
-    overflow: hidden;
-}
-
-body {
-    background-image: url('../images/TianJinTou/page_overall_background.webp'); 
-    background-size: 100% auto;
-    background-position: top center;
-    background-repeat: no-repeat;
+    padding: 0;
     background-color: #f5f5f5;
     font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+    overflow-x: hidden;
 }
 
-/* 2. 导航栏 */
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px; 
-    padding: 0 60px;
+/* 2. 导航栏 (保持之前的正确逻辑) */
+header.top-bar {
     width: 100%;
-    box-sizing: border-box;
-}
-
-.branding {
-    width: 320px; 
-    height: 100%;
+    min-width: 1000px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-image: url("../images/DiWangDongXvn/DWDX2-MENU.png");
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgb(203, 188, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-nav {
+    width: 1000px;
+    height: 100%;
     display: flex;
-    gap: 25px;
+    justify-content: flex-end;
     align-items: center;
+    padding-right: 2%;
+    gap: 25px;
 }
 
 .main-nav a {
-    color: #5C5446;
-    font-size: 1.05em;
-    font-weight: 500;
     text-decoration: none;
-    position: relative;
+    color: #5C5446;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.main-nav a.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 2px;
-    background-color: #5C5446;
-}
-
-/* 3. 主体内容布局 */
+/* 3. 主体内容布局：比例锁定 */
 .content-wrapper {
+    position: relative;
+    width: 100%;
+    min-width: 1000px;
+    aspect-ratio: 16 / 9; /* 锁定比例 */
+    background-image: url('../images/TianJinTou/page_overall_background.webp');
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: auto;
+    overflow: hidden;
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; 
-    height: calc(100vh - 60px); 
-    gap: 80px;
-    padding: 0 50px;
-    box-sizing: border-box;
+    align-items: center;
+    gap: 5%; 
 }
 
-/* 4. 图片区域：整体下移 */
+/* 4. 图片区域修复：重点确保类名与 HTML 一致 */
 .carousel-section {
     flex: 0 0 auto;
-    margin-top: 40px; 
+    /* 移除过大的 margin-top，改由 flex 居中控制 */
     position: relative;
+    z-index: 5;
 }
 
 .carousel-wrapper {
-    width: 600px;
-    height: 480px; 
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    /* 修复：使用 min 控制大小，并在缩放时保持比例 */
+    width: min(540px, 35vw);
+    aspect-ratio: 540 / 600;
     position: relative;
+    border: 0.2vw solid #a8947b;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: transparent;
 }
 
 .carousel-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .carousel-wrapper img.active {
-    display: block;
+    opacity: 1;
+    z-index: 1;
 }
 
-/* 小白点内嵌样式 */
+/* 5. 小圆点修复：确保它们浮在图片上方 */
 .dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 12px;
+    gap: 10px;
     z-index: 10;
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
+    display: inline-block;
+    width: 0.8vw;
+    height: 0.8vw;
     background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 .dot.active {
     background-color: #fff;
+    transform: scale(1.2);
 }
 
-/* 5. 文字区域精调 */
+/* 6. 文字区域精调 */
 .text-section {
-    flex: 1;
-    max-width: 580px; 
+    flex: 0 1 580px;
+    max-width: 45%;
+    /* 稍微给文字一点向下的偏移，避开背景图中可能存在的重叠 */
+    margin-bottom: 3%;
 }
 
 .text-section h1 {
-    font-size: 40px;  /* 标题大小：40 */
+    font-size: clamp(26px, 2.2vw, 36px);
     color: #60403a;
-    margin-top: 15px; 
-    margin-bottom: 10px;
+    margin-top: 1%;
+    margin-bottom: 2%;
     font-weight: 700;
 }
 
 .article-body {
-    font-size: 16px;  /* 正文大小：14 */
-    color: #444;
-    line-height: 1.5;
+    font-size: clamp(12px, 1.2vw, 19px);
+    color: #462d06;
+    line-height: 1.7;
     text-align: justify;
 }
 
 .article-body p {
-    margin-top: 0;
     margin-bottom: 1em;
-    /* 新增：首行缩进两字符 */
     text-indent: 2em; 
 }
 
-/* 核心修改 2：第三段列表化排版 */
-.article-footer .intro {
-    margin-bottom: 0.5em;
-}
-
+/* 底部最后两行避让 */
 .article-footer .list-item {
-    margin-bottom: 0.8em;
-    padding-left: 2em;   /* 整体缩进，与前两段的首行缩进对齐 */
-    text-indent: 0;      /* 列表项取消 text-indent，改用整体缩进更整齐 */
-    line-height: 1.6;
-}
-
-/* 重点：针对最后两行进行深度避让 */
-.article-footer .list-item:nth-last-child(2),
-.article-footer .list-item:last-child {
-    padding-right: 40px; /* 加大数值，彻底躲开右下角圆图 */
-}
-/* 当屏幕宽度小于 1000px 时执行 */
-@media (max-width: 1000px) {
-    .content-wrapper {
-        flex-direction: column; /* 左右排列变上下排列 */
-        height: auto;           /* 取消高度限制，允许向下滚动 */
-        padding: 20px;
-        gap: 30px;
-    }
-
-    .carousel-wrapper, .text-section {
-        width: 100%;            /* 宽度占满 */
-        max-width: 100%;
-    }
-    
-    .carousel-wrapper {
-        height: 300px;          /* 缩小图片高度 */
-    }
+    margin-bottom: 0.5em;
+    padding-left: 2em;
+    text-indent: 0;
 }

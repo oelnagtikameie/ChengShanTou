@@ -1,53 +1,112 @@
-/* 1. 注册本地字体 */
 @font-face {
-    font-family: 'SuiFengTi'; /* 这是你给字体起的代号，可以随便起，但后面要一致 */
+    font-family: 'SuiFengTi'; /* 这是你给字体起的代号 */
     src: url('./fonts/ThePeakFontPlus_V1_001.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
 
-/* 1. 基础背景 */
-body {
-    background-image: url('../images/SiLuShouWang/page_overall_background.webp'); 
-    background-size: 100% auto;
-    background-position: top center;
+header.top-bar {
+    width: 100%;
+    min-width: 1000px;
+    height: 60px;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    background-image: url("../images/DiWangDongXvn/DWDX2-MENU.png");
+    background-size: 100% 100%;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-color: rgb(203, 188, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav {
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2%;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: rgb(92, 75, 58);
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.main-nav a.active {
+    color: rgb(237, 235, 233);
+}
+
+/* 1. 基础背景：回归 16:9 比例锁定 */
+body {
+    margin: 0;
+    padding: 0;
     background-color: #f5f5f5;
     font-family: 'Noto Serif SC', serif;
+    overflow-x: hidden;
 }
 
 .content-wrapper {
     position: relative;
     width: 100%;
-    height: calc(100vh - 60px);
+    min-width: 1000px;
+    /* 核心逻辑：锁定 16:9 比例，防止背景与内容坐标脱节 */
+    aspect-ratio: 16 / 9; 
+    background-image: url('../images/SiLuShouWang/page_overall_background.webp'); 
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: auto;
     overflow: hidden;
 }
 
+/* 2. 交互容器：充满父级比例空间 */
 .interaction-container {
     display: flex;
     justify-content: space-between;
-    padding: 60px 80px 0 80px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0; /* 清除 px padding，改用内部百分比定位 */
 }
 
-/* 2. 轮播区域样式 */
+/* --- 左侧轮播区域 --- */
 .left-slider {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    /* 使用百分比 margin 确保即便图片大小固定，它的“中心点”也随背景移动 */
+    margin-top: 8%; 
 }
 
 .carousel {
-    width: 520px;
-    height: 570px;
+    /* 核心修改：使用 min() 函数控制缩小幅度 */
+    /* 520px 是最大宽度。28vw 是缩小的比例速率（你可以根据需要调大或调小这个 vw 值） */
+    width: min(520px, 38vw); 
+    
+    /* 保持宽高比，这样高度会随宽度等比例缩小，不会变形 */
+    aspect-ratio: 520 / 570; 
+    
+    /* 原有样式保留 */
+    margin-left: 38%;
+    margin-top: 5%;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    margin-top: -5%;
     transform: translateX(-55px);
 }
 
+/* 确保图片高度不再是死值，而是随容器自适应 */
 .carousel img {
     position: absolute;
     width: 100%;
@@ -61,9 +120,10 @@ body {
     opacity: 1;
 }
 
+/* 小圆点位置微调 */
 .dots-container {
-    margin-top: -25px;
-    transform: translateX(-20px);
+    margin-top: 15px; /* 固定像素间距 */
+    transform: translateX(-55px);
 }
 
 .dot {
@@ -74,22 +134,20 @@ body {
     background-color: #ccc;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 100;
-    transform: translateX(-20px);
-    margin-top: -25px;
 }
 
 .dot.active {
     background-color: #462d06;
-    z-index: 110;
 }
 
-/* 3. 右侧文字区域布局 */
+/* --- 右侧文字区域 --- */
 .side-content {
-    flex: 1.2;
+    flex: 1.5;
     display: flex;
     flex-direction: column;
-    padding-left: 40px;
+    /* 这里的 margin-top 决定了文字起始点在背景图上的垂直位置 */
+    margin-top: 5.7%;
+    margin-left: 0%;
 }
 
 .custom-btn {
@@ -97,79 +155,52 @@ body {
     border: none;
     color: #60403a;
     font-family: 'SuiFengTi', serif;
-    font-size: 24px;
+    /* 建议使用 clamp 以适应不同分辨率下的按钮美感 */
+    font-size: clamp(20px, 1.8vw, 26px);
     padding: 8px 30px;
-    border-radius: 20px;
     cursor: pointer;
     width: fit-content;
-    margin-top: -11px;
-    margin-left:20%;
-    transition: background 0.3s;
+    margin-left: 36.1%;
+    margin-bottom: 3%;
+    outline: none;
 }
 
-/* 文字内容独立控制 */
-.text-box p {
-    color: #462d06;
-    font-size: 17px;
-    line-height: 1.7;
-    margin-top: 5px;
-    text-align: justify;
-}
-
-/* 交互部分初始状态 */
-.interactive {
-    opacity: 1;
-    width:650px;
-    visibility: visible;
-    margin-top:10px;
+.text-box.interactive {
+    width: 85%;
+    max-width: 650px;
     transform: translateX(-75px);
 }
 
-/* 独立控制三段文字 */
-.para-bold { 
-    font-weight: bold; 
-    text-indent: 0; 
-}
-.para-indent { 
-    text-indent: 2em; 
-}
-.para-short { 
-    text-indent: 2em;
+.text-box p {
+    color: #462d06;
+    /* 使用之前讨论过的字体缩放逻辑 */
+    font-size: clamp(12px, 1.5vw, 19px);
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 3%;
+    margin-left: 22%;
+    width: 100%;
 }
 
-/* 静态文字样式（下方区域） */
+/* 静态文字样式（底部区域） */
 .static {
-    margin-top: 5%;
+    margin-left: 0%;
+    margin-top: 3%;
     border-top: 1px solid rgba(168, 148, 123, 0.3);
-    padding-top: 0px;
-    transform:translateX(-75px);
+    width: 90%;
+    transform: translateX(-75px);
 }
 
 .static p {
     text-indent: 2em;
     font-family: 'SuiFengTi', 'Noto Serif SC', serif;
-    color: #462d06;
-    font-size: 18px;
-    line-height: 1.7;
-    margin-top: 0px;
-    text-align: justify;
-    width:95%;
+    /* 静态部分字体通常可以稍微大一点点以示区分 */
+    font-size: clamp(12px, 1.5vw, 20px);
+    margin-top: 1%;
+    margin-left: 19%;
+    width: 90%;
 }
-/* 当屏幕宽度小于 1000px 时执行 */
-@media (max-width: 1000px) {
-    .content-wrapper {
-        flex-direction: column; /* 左右排列变上下排列 */
-        height: auto;           /* 取消高度限制，允许向下滚动 */
-        padding: 20px;
-        gap: 30px;
-    }
 
-    .carousel-wrapper, .text-section {
-        width: 100%;            /* 宽度占满 */
-        max-width: 100%;
-    }
-    
-    .carousel-wrapper {
-        height: 300px;          /* 缩小图片高度 */
-    }
+.text-box p.para-short {
+    margin-bottom: 0%;
 }

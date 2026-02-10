@@ -1,46 +1,93 @@
-/* 1. 基础背景与布局容器 */
-body {
-    background-image: url('../images/FengHuoSuiYue/page_bg_2.webp'); 
-    background-size: 100% auto;
-    background-position: top center;
+header.top-bar {
+    width: 100%;
+    min-width: 1000px;
+    height: 60px;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    background-image: url("../images/DiWangDongXvn/DWDX2-MENU.png");
+    background-size: 100% 100%;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-color: #f5f5f5;
-    font-family: 'Noto Serif SC', serif;
+    background-color: rgb(203, 188, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.main-nav {
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2%;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: rgb(92, 75, 58);
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.main-nav a.active {
+    color: rgb(237, 235, 233);
+}
+
+/* 1. 基础背景与布局容器 */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: 'Noto Serif SC', serif;
+    overflow-x: hidden;
+}
 
 .content-wrapper {
     position: relative;
     width: 100%;
-    height: calc(100vh - 60px);
+    min-width: 1000px;
+    /* 核心逻辑：锁定比例，背景图拉满 */
+    aspect-ratio: 16 / 9;
+    background-image: url('../images/FengHuoSuiYue/page_bg_2.webp'); 
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: auto;
     overflow: hidden;
 }
 
 /* 2. 文字区域定位 */
 .text-container {
     position: absolute;
-    margin-top: 22%;    /* 根据背景图调节上下位置 */
-    left:8%;    /* 距离左侧边距 */
-    width: 55%;  /* 限制文字宽度，防止文字铺满屏幕 */
+    /* 统一改用 top 而非 margin-top，定位更纯粹 */
+    top: 46%;
+    left: 8%;
+    width: 55%;
+    max-width: 750px;
+    z-index: 5;
 }
 
 .article-content p {
-    font-size: 16px;
+    /* 使用您熟悉的 clamp 逻辑，让字体随比例伸缩 */
+    font-size: clamp(12px, 1.25vw, 20px);
     color: #462d06;
     line-height: 1.8;
-    margin-bottom: 2px;
+    margin-bottom: 2%; /* 改为百分比间距 */
     text-align: justify;
-    /* 核心要求：首行缩进两字符 */
-    text-indent: 2em; 
+    text-indent: 2em;
 }
 
 /* 3. 返回按钮样式 */
 .goback-btn {
     position: absolute;
-    bottom: 13%;
-    right: 35%;
-    padding: 10px 40px;
-    /* 采用与背景装饰相称的深棕色或透明描边样式 */
+    /* 确保使用百分比，它会随着 16/9 的容器一起等比缩放 */
+    bottom: 2.8%;
+    right: 37%;
+    padding: 0.8% 2.5%;
     background: rgba(255, 255, 255, 0.8);
     color: #5c4b3a;
     text-decoration: none;
@@ -48,17 +95,11 @@ body {
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    font-size: clamp(14px, 0.9vw, 18px);
+    white-space: nowrap;
 }
 
 .goback-btn:hover {
     background: #5c4b3a;
     color: #fff;
-}
-
-/* 4. 目录栏微调（如果需要与背景色更融合） */
-.main-nav a {
-    color: #462d06;
-}
-.main-nav a.active::after {
-    background-color: #462d06;
 }

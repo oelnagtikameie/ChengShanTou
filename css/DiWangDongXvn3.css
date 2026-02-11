@@ -51,7 +51,7 @@ body {
     position: relative;
     width: 100%;
     min-width: 1000px; /* 保护最小显示 */
-    aspect-ratio: 16 / 9; /* 强制锁定比例，这是防止变形的核心 */
+    aspect-ratio: 16 / 9; /* 强制锁定比例 */
     background-image: url('../images/DiWangDongXvn/page_bg_3.webp'); 
     background-size: 100% 100%; /* 背景图随容器等比例缩放 */
     background-position: center top;

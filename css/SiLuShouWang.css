@@ -122,8 +122,8 @@ body {
 
 /* 小圆点位置微调 */
 .dots-container {
-    margin-top: 15px; /* 固定像素间距 */
-    transform: translateX(-55px);
+    margin-top: 1%; /* 固定像素间距 */
+    margin-left: 17%;
 }
 
 .dot {
@@ -196,7 +196,7 @@ body {
     font-family: 'SuiFengTi', 'Noto Serif SC', serif;
     /* 静态部分字体通常可以稍微大一点点以示区分 */
     font-size: clamp(12px, 1.5vw, 20px);
-    margin-top: 1%;
+    margin-top: 0%;
     margin-left: 19%;
     width: 90%;
 }

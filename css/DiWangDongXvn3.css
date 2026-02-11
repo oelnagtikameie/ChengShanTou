@@ -119,6 +119,10 @@ body {
     cursor: pointer;
 }
 
+.dot.active {
+    background-color: #462d06;
+}
+
 /* --- 右侧文字区域 --- */
 .side-content {
     flex: 1.2;

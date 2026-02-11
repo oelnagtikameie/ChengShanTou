@@ -150,6 +150,6 @@ header.top-bar {
 /* 底部最后两行避让 */
 .article-footer .list-item {
     margin-bottom: 0.5em;
-    padding-left: 2em;
-    text-indent: 0;
+    padding-left: 0em;
+    text-indent: 2em;
 }

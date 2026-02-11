@@ -144,7 +144,7 @@ body {
 
 .text-box p:nth-child(2) {
     width: 95%;
-    padding-bottom: 4%;
+    padding-bottom: 7%;
 }
 
 /* 第三段：跨屏效果（通过负 margin 或 translateX 模拟跨出盒子） */
@@ -160,8 +160,8 @@ body {
 /* 9. 继续探索按钮 - 严格对位 */
 .next-page-btn {
     position: absolute;
-    bottom: 4.7%; /* 与第一页保持一致的底部距离 */
-    right: 10.1%;
+    bottom: 4.9%; /* 与第一页保持一致的底部距离 */
+    right: 10.6%;
     z-index: 10;
     width: 120px;
     height: 40px;
@@ -171,5 +171,5 @@ body {
     border-radius: 20px;
     text-decoration: none;
     color: rgb(92, 75, 58);
-    font-size: 14px;
+    font-size: 18px;
 }

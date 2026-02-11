@@ -138,7 +138,7 @@ body {
 .custom-btn {
     background: transparent;
     border: none;
-    color: rgb(96, 64, 58);
+    color: transparent;
     font-family: SuiFengTi, serif;
     font-size: clamp(20px, 1.8vw, 22px);
     padding: 8px 30px;

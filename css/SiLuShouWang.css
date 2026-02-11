@@ -140,11 +140,11 @@ body {
     border: none;
     color: rgb(96, 64, 58);
     font-family: SuiFengTi, serif;
-    font-size: clamp(20px, 1.8vw, 26px);
+    font-size: clamp(20px, 1.8vw, 24px);
     padding: 8px 30px;
     cursor: pointer;
     width: fit-content;
-    margin-left: 36.1%;
+    margin-left: 37%;
     margin-bottom: 3%;
     outline: none;
 }
@@ -183,5 +183,5 @@ body {
 }
 
 .text-box p.para-short {
-    margin-bottom: -1%;
+    margin-bottom: 0%;
 }

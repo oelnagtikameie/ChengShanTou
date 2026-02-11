@@ -7,7 +7,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* 2. 导航栏 (保持之前的正确逻辑) */
+/* 2. 导航栏 */
 header.top-bar {
     width: 100%;
     min-width: 1000px;
@@ -62,16 +62,14 @@ header.top-bar {
     gap: 5%; 
 }
 
-/* 4. 图片区域修复：重点确保类名与 HTML 一致 */
+/* 4. 图片区域 */
 .carousel-section {
     flex: 0 0 auto;
-    /* 移除过大的 margin-top，改由 flex 居中控制 */
     position: relative;
     z-index: 5;
 }
 
 .carousel-wrapper {
-    /* 修复：使用 min 控制大小，并在缩放时保持比例 */
     width: min(540px, 35vw);
     aspect-ratio: 540 / 600;
     position: relative;
@@ -97,7 +95,6 @@ header.top-bar {
     z-index: 1;
 }
 
-/* 5. 小圆点修复：确保它们浮在图片上方 */
 .dots {
     position: absolute;
     bottom: 5%;
@@ -127,7 +124,6 @@ header.top-bar {
 .text-section {
     flex: 0 1 580px;
     max-width: 45%;
-    /* 稍微给文字一点向下的偏移，避开背景图中可能存在的重叠 */
     margin-bottom: 3%;
 }
 

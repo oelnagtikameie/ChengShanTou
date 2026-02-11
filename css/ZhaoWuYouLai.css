@@ -46,7 +46,7 @@ body {
     overflow-x: hidden;
 }
 
-/* 导航栏保持与“之前的页面”完全一致 */
+/* 导航栏 */
 header.top-bar {
     width: 100%;
     min-width: 1000px;
@@ -91,7 +91,7 @@ header.top-bar {
     position: relative;
     width: 100%;
     min-width: 1000px;
-    aspect-ratio: 16 / 9; /* 强制锁定比例 */
+    aspect-ratio: 16 / 9; 
     background-image: url('../images/ZhaoWuYouLai/page_overall_background.webp'); 
     background-size: 100% 100%;
     background-position: center top;
@@ -99,7 +99,6 @@ header.top-bar {
     height: auto;
     overflow: hidden;
 
-    /* 内部布局由 flex 改为 相对定位 或 左右布局 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +109,7 @@ header.top-bar {
 .text-section {
     flex: 1;
     max-width: 550px;
-    margin-left: 5%; /* 根据背景图微调左右 */
+    margin-left: 5%; 
     z-index: 5;
 }
 
@@ -150,7 +149,6 @@ header.top-bar {
     border: 0.2vw solid #a8947b;
     border-radius: 15px;
     overflow: hidden;
-    /* 这里的 box-shadow 正在起作用 */
     box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 
@@ -190,5 +188,3 @@ header.top-bar {
     background-color: #fff;
     transform: scale(1.2);
 }
-
-/* 移除旧的媒体查询，改用比例锁定逻辑 */

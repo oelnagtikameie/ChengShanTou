@@ -11,7 +11,6 @@ body, html {
 .home-container {
     position: relative;
     width: 100%;
-    /* 核心：锁定 16:9 比例，确保背景图不因窗口拉伸而变形或移位 */
     aspect-ratio: 16 / 9; 
     min-width: 1000px;
     
@@ -35,7 +34,7 @@ body, html {
     z-index: 2;
 }
 
-/* 4. 探索按钮：从固定像素改为百分比定位 */
+/* 4. 探索按钮：百分比定位 */
 .explore-button-container {
     position: absolute;
     /* 100px / 1080px ≈ 9.2% */
@@ -47,19 +46,16 @@ body, html {
 .explore-button {
     display: flex;
     align-items: center;
-    /* 按钮内间距也建议微调为相对单位或保持适中像素 */
     padding: 0.8vw 1.6vw;
     background-color: transparent;
     border-radius: 30px;
     text-decoration: none;
-    /* 这里的颜色如果是透明的，请根据需要改为你想要的颜色或保持原样 */
     color: transparent; 
-    /* 字体随屏幕缩放 */
     font-size: clamp(16px, 1.2vw, 22px);
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: transparent; /* 建议加个微弱边框增加识别度 */
+    border: transparent; 
     margin-left: -30%;
     margin-right: 50%;
     margin-bottom: 80%;

@@ -50,7 +50,6 @@ body {
     position: relative;
     width: 100%;
     min-width: 1000px;
-    /* 核心逻辑：锁定比例，背景图拉满 */
     aspect-ratio: 16 / 9;
     background-image: url('../images/FengHuoSuiYue/page_bg_2.webp'); 
     background-size: 100% 100%;
@@ -63,7 +62,6 @@ body {
 /* 2. 文字区域定位 */
 .text-container {
     position: absolute;
-    /* 统一改用 top 而非 margin-top，定位更纯粹 */
     top: 46%;
     left: 8%;
     width: 55%;
@@ -72,7 +70,6 @@ body {
 }
 
 .article-content p {
-    /* 使用您熟悉的 clamp 逻辑，让字体随比例伸缩 */
     font-size: clamp(12px, 1.25vw, 20px);
     color: #462d06;
     line-height: 1.8;

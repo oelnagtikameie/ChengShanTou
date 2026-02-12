@@ -151,11 +151,10 @@ body {
 }
 
 .text-box.interactive {
-    margin-right: 1.4%;
+    margin-right: 16%;
     width: 100%;
     max-width: 650px;
     text-indent: 2em;
-    transform: translateX(-75px);
 }
 
 .text-box p {

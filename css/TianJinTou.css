@@ -1,19 +1,9 @@
-/* 1. 页面基础设定 */
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
-    overflow-x: hidden;
-}
-
-/* 2. 导航栏 */
 header.top-bar {
     width: 100%;
     min-width: 1000px;
     height: 60px;
     position: sticky;
-    top: 0;
+    top: 0px;
     z-index: 1000;
     background-image: url("../images/DiWangDongXvn/DWDX2-MENU.png");
     background-size: 100% 100%;
@@ -37,9 +27,22 @@ header.top-bar {
 
 .main-nav a {
     text-decoration: none;
-    color: #5C5446;
+    color: rgb(92, 75, 58);
     font-weight: bold;
     font-size: 16px;
+    white-space: nowrap;
+}
+
+.main-nav a.active {
+    color: rgb(237, 235, 233);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(245, 245, 245);
+    font-family: "Noto Serif SC", serif;
+    overflow-x: hidden;
 }
 
 /* 3. 主体内容布局：比例锁定 */

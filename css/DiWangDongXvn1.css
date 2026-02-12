@@ -107,11 +107,13 @@ body {
 }
 
 .left-side .custom-btn {
+    margin-top: 0.5%;
     margin-left: 35.5%;
 }
 
 .right-side .custom-btn {
-    margin-left: 25.8%;
+    margin-left: 26.2%;
+    margin-top: 0.4%;
     align-self: flex-start;
 }
 

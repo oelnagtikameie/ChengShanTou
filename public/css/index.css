@@ -1,0 +1,86 @@
+/* 1. 基础容器修改 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+.home-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    min-width: 1000px;
+    
+    background-image: url('../images/home/background.webp'); 
+    /* 强制背景图与比例容器完全对齐 */
+    background-size: 100% 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* 确保内容在背景之上 */
+.home-header, .main-content, .explore-button-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 4. 探索按钮：百分比定位 */
+.explore-button-container {
+    align-items: center;
+    position: absolute;
+    /* 100px / 1080px ≈ 9.2% */
+    bottom: 0%; 
+    /* 60px / 1920px ≈ 3.1% */
+    display: flex;
+    flex-direction: column;
+    right: 3.1%;
+}
+
+.explore-button {
+    display: flex;
+    align-items: center;
+    padding: 0.8vw 1.6vw;
+    background-color: transparent;
+    border-radius: 30px;
+    text-decoration: none;
+    color: transparent;
+    font-size: clamp(16px, 1.2vw, 22px);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: transparent;
+    margin-left: 25%;
+    margin-right: 8%;
+    margin-bottom: 50%;
+}
+
+.explore-button:hover {
+    background-color: transparent;
+    transform: scale(1.05);
+}
+
+/* 计数器文字样式 */
+.visitor-info {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1rem;
+    color: rgb(73 32 32 / 85%); /* 半透明白色，高级感 */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* 文字阴影，确保在浅色背景也清晰 */
+    letter-spacing: 1px;
+    margin-bottom: 10%;
+}
+
+#visitor-count {
+    font-weight: bold;
+    color: #ec9610de; /* 数字加白加粗 */
+    margin: 0 2px;
+}

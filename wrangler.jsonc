@@ -3,7 +3,7 @@
   "main": "index.js",        // 指定后端入口文件
   "compatibility_date": "2026-02-14",
   "assets": {
-    "directory": "./"        // 指定静态资源在当前目录
+    "directory": "./public"        // 指定静态资源在当前目录
   },
   "kv_namespaces": [
     {

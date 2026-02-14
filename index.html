@@ -18,15 +18,18 @@
 </head>
 <body>
     <div class="home-container">
-        <!-- 右下角按钮：“开启你的探索” -->
         <div class="explore-button-container">
-            <!-- 点击箭头跳转到 TianJinTou.html 页面 -->
+            <div class="visitor-info">
+                本站已被访问 <span id="visitor-count">...</span> 次
+            </div>
+
             <a href="html/TianJinTou.html" class="explore-button">
-                <span>开</span>
+                <span>开启你的探索</span>
             </a>
         </div>
     </div>
-<script>
+
+    <script>
         async function updateCounter() {
             try {
                 const response = await fetch('/api/visit');

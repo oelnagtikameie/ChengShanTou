@@ -26,24 +26,20 @@
             </a>
         </div>
     </div>
+<script>
+        async function updateCounter() {
+            try {
+                const response = await fetch('/api/visit');
+                const count = await response.text();
+                document.getElementById('visitor-count').innerText = count;
+            } catch (err) {
+                console.error('计数器加载失败', err);
+                document.getElementById('visitor-count').innerText = 'N/A';
+            }
+        }
+        updateCounter();
+    </script>
 </body>
 
-<div style="text-align: center; margin-top: 50px; color: #888;">
-    本站已被访问 <span id="visitor-count">...</span> 次
-</div>
-
-<script>
-    async function updateCounter() {
-    try {
-        const response = await fetch('/api/visit');
-        const count = await response.text();
-        document.getElementById('visitor-count').innerText = count;
-    } catch (err) {
-        console.error('计数器加载失败', err);
-        document.getElementById('visitor-count').innerText = 'N/A';
-    }
-    }
-    updateCounter();
-</script>
 
 </html>

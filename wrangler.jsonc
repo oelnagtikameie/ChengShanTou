@@ -1,0 +1,14 @@
+{
+  "name": "UltraChengShanTou",
+  "main": "index.js",        // 指定后端入口文件
+  "compatibility_date": "2026-02-14",
+  "assets": {
+    "directory": "./"        // 指定静态资源在当前目录
+  },
+  "kv_namespaces": [
+    {
+      "binding": "COUNT_DB", // 你的数据库变量名
+      "id": "fb7440c7720e46139033e17a2fa00d18"    // 在 Cloudflare KV 页面看到的 ID
+    }
+  ]
+}

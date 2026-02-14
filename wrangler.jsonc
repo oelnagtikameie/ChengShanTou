@@ -1,5 +1,5 @@
 {
-  "name": "UltraChengShanTou",
+  "name": "chengshantou",
   "main": "index.js",        // 指定后端入口文件
   "compatibility_date": "2026-02-14",
   "assets": {
